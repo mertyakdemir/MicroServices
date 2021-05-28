@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Services.FakePayment.Models;
 using SharedLib.ControllerBases;
 using SharedLib.Dtos;
 using System;
@@ -14,7 +15,7 @@ namespace Services.FakePayment.Controllers
     public class FakePaymentsController : CustomBaseController
     {
         [HttpPost]
-        public IActionResult ReceivePayment()
+        public IActionResult ReceivePayment(PaymentDto paymentDto)
         {
            return CreateActionResultInstance(Response<NoContent>.Success(200));
         }
